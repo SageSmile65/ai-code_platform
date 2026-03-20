@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ai_interview_prep
+    username: root
+    password: Freedom@0
+
+  jpa:
+    show-sql: true
+
+  application:
+    name: ai-interview-prep
+
+server:
+  port: 8080
