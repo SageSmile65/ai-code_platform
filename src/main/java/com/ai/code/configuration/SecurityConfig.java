@@ -19,10 +19,10 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/users/**").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/api/users/**").permitAll()
-                        .requestMatchers("/api/problems/**").permitAll()
-                        .anyRequest().authenticated()
+//                        .requestMatchers(HttpMethod.POST, "/api/users/**").permitAll()
+//                        .requestMatchers(HttpMethod.GET,"/api/users/**").permitAll()
+//                        .requestMatchers("/api/problems/**").permitAll()
+                        .anyRequest().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
 
