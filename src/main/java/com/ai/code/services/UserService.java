@@ -1,6 +1,7 @@
 package com.ai.code.services;
 
 import com.ai.code.entities.User;
+import com.ai.code.exceptions.UserNotFoundException;
 import com.ai.code.repositories.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class UserService {
         }
 
         return userRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
     }
     private boolean isBlank(String value) {
         return value == null || value.trim().isEmpty();

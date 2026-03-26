@@ -1,6 +1,7 @@
 package com.ai.code.services;
 
 import com.ai.code.entities.Problem;
+import com.ai.code.exceptions.ProblemNotFoundException;
 import com.ai.code.repositories.ProblemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,6 @@ public class ProblemService {
         }
 
         return problemRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Problem not found"));
+                .orElseThrow(() -> new ProblemNotFoundException("Problem does not exist"));
     }
 }
